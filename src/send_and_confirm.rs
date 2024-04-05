@@ -19,9 +19,9 @@ use solana_transaction_status::UiTransactionEncoding;
 
 use crate::Miner;
 
-const RPC_RETRIES: usize = 1000;
-const GATEWAY_RETRIES: usize = 1000;
-const CONFIRM_RETRIES: usize = 1000;
+const RPC_RETRIES: usize = 2;
+const GATEWAY_RETRIES: usize = 8;
+const CONFIRM_RETRIES: usize = 8;
 
 impl Miner {
     pub async fn send_and_confirm(&self, ixs: &[Instruction]) -> ClientResult<Signature> {
